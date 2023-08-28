@@ -4,9 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
-import { TaskComponent } from './task/task.component';
-import { TaskListComponent } from './task-list/task-list.component';
+import { TaskComponent } from './tasks/task/task.component';
+import { TaskListComponent } from './tasks/task-list/task-list.component';
 import { ColorByStatusDirective } from './color-by-status.directive';
+import { DateFormatPipe } from './date-format.pipe';
 
 @NgModule({
   declarations: [
@@ -14,11 +15,12 @@ import { ColorByStatusDirective } from './color-by-status.directive';
     HelloWorldComponent,
     TaskComponent,
     TaskListComponent,
-    ColorByStatusDirective
+    ColorByStatusDirective,
+    DateFormatPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
