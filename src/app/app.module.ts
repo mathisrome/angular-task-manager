@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { TaskComponent } from './task/task.component';
-import { MainTaskComponent } from './main-task/main-task.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { ColorByStatusDirective } from './color-by-status.directive';
 
@@ -14,7 +13,6 @@ import { ColorByStatusDirective } from './color-by-status.directive';
     AppComponent,
     HelloWorldComponent,
     TaskComponent,
-    MainTaskComponent,
     TaskListComponent,
     ColorByStatusDirective
   ],

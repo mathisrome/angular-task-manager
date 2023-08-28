@@ -1,11 +1,11 @@
 import {Directive, ElementRef, Input} from '@angular/core';
-import {TaskStatus} from "./model/Task";
+import {Task, TaskStatus} from "./model/Task";
 
 @Directive({
   selector: '[appColorByStatus]'
 })
 export class ColorByStatusDirective {
-  @Input() appColorByStatus: string = TaskStatus.DONE;
+  @Input() appColorByStatus: TaskStatus = TaskStatus.DONE;
 
   constructor(private el: ElementRef) {
 
@@ -14,7 +14,7 @@ export class ColorByStatusDirective {
     this.changeColor(this.appColorByStatus)
   }
 
-  private changeColor(appColorChangeByState: string) {
+  private changeColor(appColorChangeByState: TaskStatus) {
     if (appColorChangeByState === TaskStatus.TODO) {
       this.el.nativeElement.style.color = 'red'
     } else if (appColorChangeByState === TaskStatus.IN_PROGRESS) {
