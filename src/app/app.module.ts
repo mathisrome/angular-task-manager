@@ -12,6 +12,9 @@ import { MainTaskListComponent } from './tasks/main-task-list/main-task-list.com
 import { AddTaskFormComponent } from './add-task-form/add-task-form/add-task-form.component';
 import { MainAddTaskFormComponent } from './add-task-form/main-add-task-form/main-add-task-form.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { ErrorMinLengthFieldFormComponent } from './fields/error-min-length-field-form/error-min-length-field-form.component';
+import { ErrorRequiredFieldFormComponent } from './fields/error-required-field-form/error-required-field-form.component';
+import { ErrorMaxLengthFieldFormComponent } from './fields/error-max-length-field-form/error-max-length-field-form.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import {ReactiveFormsModule} from "@angular/forms";
     DateFormatPipe,
     MainTaskListComponent,
     AddTaskFormComponent,
-    MainAddTaskFormComponent
+    MainAddTaskFormComponent,
+    ErrorMinLengthFieldFormComponent,
+    ErrorRequiredFieldFormComponent,
+    ErrorMaxLengthFieldFormComponent
   ],
     imports: [
         BrowserModule,

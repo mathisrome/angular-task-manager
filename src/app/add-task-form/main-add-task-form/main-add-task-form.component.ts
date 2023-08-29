@@ -1,9 +1,7 @@
 import {Component} from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {TaskList} from "../../model/TaskList";
 import {Task} from 'src/app/model/Task';
-import {CRUDTaskListService} from "../../services/crudtask/crudtask-list.service";
 import {Router} from "@angular/router";
+import {TaskService} from "../../services/taskService/task.service";
 
 @Component({
   selector: 'app-main-add-task-form',
@@ -11,11 +9,12 @@ import {Router} from "@angular/router";
   styleUrls: ['./main-add-task-form.component.scss']
 })
 export class MainAddTaskFormComponent {
-  constructor(private CRUDTaskService: CRUDTaskListService, private router: Router) {
+  constructor(private taskService: TaskService, private router: Router) {
   }
 
   handleSubmitEvent(task: Task) {
-    this.CRUDTaskService.addTask(task)
+    task = new Task(task.title, task.description, task.status, new Date())
+    this.taskService.addTask(task)
     this.router.navigateByUrl('/tasks')
   }
 }

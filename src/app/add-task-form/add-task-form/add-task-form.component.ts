@@ -12,11 +12,27 @@ export class AddTaskFormComponent {
   @Output() submitEvent = new EventEmitter();
 
   form = new FormGroup({
-    'title': new FormControl("", Validators.required),
-    'description': new FormControl("", Validators.required),
-    'status': new FormControl("TODO", Validators.required),
-    'createdAt': new FormControl(new Date())
+    title: new FormControl("", [
+      Validators.required,
+      Validators.minLength(4)
+    ]),
+    description: new FormControl("", [
+      Validators.minLength(10),
+      Validators.required,
+      Validators.maxLength(100),
+    ]),
+    status: new FormControl("todo", [
+      Validators.required
+    ]),
   });
+
+  get title() {
+    return this.form.get('title');
+  }
+
+  get description() {
+    return this.form.get('description');
+  }
 
   onSubmit() {
     this.submitEvent.emit(this.form.value)

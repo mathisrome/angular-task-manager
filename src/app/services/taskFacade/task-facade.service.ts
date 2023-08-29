@@ -1,23 +1,18 @@
 import {Injectable} from '@angular/core';
-import {ByStatutTaskListService} from "../byStatusTaskList/by-statut-task-list.service";
-import {TaskList} from "../../model/TaskList";
-import {Task} from 'src/app/model/Task';
+import {TaskService} from "../taskService/task.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class TaskFacadeService {
-
-  constructor(
-    private byStatutService: ByStatutTaskListService
-  ) {
+  constructor(private taskService: TaskService  ) {
   }
 
   getListOfTasksDone() {
-    return this.byStatutService.getListOfTasksDone();
+    return this.taskService.getListOfTasksDone();
   }
 
   getListOfTaskNotDone() {
-    return this.byStatutService.getListOfTaskNotDone();
+    return this.taskService.getListOfTaskNotDone();
   }
 }

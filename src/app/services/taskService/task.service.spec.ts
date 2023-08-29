@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CRUDTaskListService } from './crudtask-list.service';
+import { TaskService } from './task.service';
 
-describe('CRUDTaskListService', () => {
-  let service: CRUDTaskListService;
+describe('TaskServiceService', () => {
+  let service: TaskService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(CRUDTaskListService);
+    service = TestBed.inject(TaskService);
   });
 
   it('should be created', () => {

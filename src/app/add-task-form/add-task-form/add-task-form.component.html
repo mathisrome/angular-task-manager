@@ -1,20 +1,32 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()" class="container">
-  <div>
+  <div class="mb-3">
     <label>Titre</label>
-    <input  type="text" formControlName="title">
+    <input class="mb-3" type="text" formControlName="title">
+    <app-error-required-field-form [isDisplay]="title?.invalid && title?.errors?.['required']"
+                                   [inputName]="'Title'"></app-error-required-field-form>
+    <app-error-min-length-field-form [isDisplay]="title?.invalid && title?.errors?.['minlength']"
+                                     [inputName]="'Title'" [minLength]="'4'"></app-error-min-length-field-form>
   </div>
 
-  <div>
+  <div class="mb-3">
     <label>Description</label>
-    <textarea  formControlName="description" cols="30" rows="10"></textarea>
+    <textarea formControlName="description" cols="30" rows="10"></textarea>
+    <app-error-required-field-form [isDisplay]="description?.invalid && description?.errors?.['required']"
+                                   [inputName]="'Description'"></app-error-required-field-form>
+    <app-error-min-length-field-form [isDisplay]="description?.invalid && description?.errors?.['minlength']"
+                                     [inputName]="'Description'"
+                                     [minLength]="'10'"></app-error-min-length-field-form>
+    <app-error-max-length-field-form [isDisplay]="description?.invalid && description?.errors?.['maxlength']"
+                                     [inputName]="'Description'"
+                                     [maxLength]="'100'"></app-error-max-length-field-form>
   </div>
 
-  <div>
+  <div class="mb-3">
     <label>Statut</label>
     <select formControlName="status">
-      <option value="TODO">TODO</option>
-      <option value="In progress">In progress</option>
-      <option value="Done">Done</option>
+      <option value="todo">TODO</option>
+      <option value="in progress">In progress</option>
+      <option value="done">Done</option>
     </select>
   </div>
 

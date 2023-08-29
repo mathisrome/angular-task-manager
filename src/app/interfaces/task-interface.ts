@@ -1,7 +1,9 @@
+import { Task } from "../model/Task";
 import {TaskList} from "../model/TaskList";
 import {Observable} from "rxjs";
 
-export interface ByStatusTaskListInterface {
+export interface TaskInterface {
+  getList(): Observable<TaskList>
 
   getListOfTasksDone(): Observable<TaskList>
 
