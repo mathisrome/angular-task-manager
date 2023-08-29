@@ -11,12 +11,6 @@ import {Router} from "@angular/router";
   styleUrls: ['./main-add-task-form.component.scss']
 })
 export class MainAddTaskFormComponent {
-  form = new FormGroup({
-    'title': new FormControl("", Validators.required),
-    'description': new FormControl("", Validators.required),
-    'status': new FormControl("TODO", Validators.required),
-  });
-
   constructor(private CRUDTaskService: CRUDTaskListService, private router: Router) {
   }
 

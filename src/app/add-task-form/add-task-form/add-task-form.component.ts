@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {FormGroup} from "@angular/forms";
+import {Component, EventEmitter, Output} from '@angular/core';
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Task} from "../../model/Task";
 
 @Component({
@@ -9,12 +9,16 @@ import {Task} from "../../model/Task";
 })
 export class AddTaskFormComponent {
 
-  @Input() form !: FormGroup;
-  @Output() submitEvent = new EventEmitter<Task>();
+  @Output() submitEvent = new EventEmitter();
+
+  form = new FormGroup({
+    'title': new FormControl("", Validators.required),
+    'description': new FormControl("", Validators.required),
+    'status': new FormControl("TODO", Validators.required),
+    'createdAt': new FormControl(new Date())
+  });
 
   onSubmit() {
-    let taskObject = this.form.value
-
-    this.submitEvent.emit(taskObject)
+    this.submitEvent.emit(this.form.value)
   }
 }
