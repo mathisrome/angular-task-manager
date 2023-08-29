@@ -23,8 +23,12 @@ export class TaskService {
 
   addTask(task: Task) {
     this.taskList.tasks.push(task)
-    console.log(this.taskList)
   }
+
+  removeTask(title: string){
+    this.taskList = new TaskList(this.taskList.tasks.filter(task => task.title !== title))
+  }
+
   private getByStatus(tasksStatus: TaskStatus[]) {
     let takeList = new TaskList(this.taskList.tasks.filter(task => tasksStatus.includes(task.status)))
     return of(takeList)

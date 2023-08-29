@@ -1,0 +1,12 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="container">
+  <div class="mb-3">
+    <label>Titre</label>
+    <input class="mb-3" type="text" formControlName="title">
+    <app-error-required-field-form [isDisplay]="title?.invalid && title?.errors?.['required']"
+                                   [inputName]="'Title'"></app-error-required-field-form>
+    <app-error-min-length-field-form [isDisplay]="title?.invalid && title?.errors?.['minlength']"
+                                     [inputName]="'Title'" [minLength]="'4'"></app-error-min-length-field-form>
+  </div>
+
+  <button type="submit" [disabled]="!form.valid">Delete Task</button>
+</form>
