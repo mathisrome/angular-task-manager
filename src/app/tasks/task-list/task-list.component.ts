@@ -1,10 +1,6 @@
-import {Component} from '@angular/core';
-import {TaskList} from "../../model/TaskList";
-import {TaskStatus, Task} from "../../model/Task";
-import {CRUDTaskListService} from "../../services/crudtask/crudtask-list.service";
-import {ByStatutTaskListService} from "../../services/byStatusTaskList/by-statut-task-list.service";
-import {ByStatusTaskListInterface} from "../../interfaces/by-status-task-list-interface";
+import {Component, Input} from '@angular/core';
 import {TaskFacadeService} from "../../services/taskFacade/task-facade.service";
+import {TaskList} from "../../model/TaskList";
 
 @Component({
   selector: 'app-task-list',
@@ -15,7 +11,7 @@ export class TaskListComponent {
   constructor(private taskFacade: TaskFacadeService) {
   }
 
-  allTaskList = this.taskFacade.getListOfTaskNotDone()
+  @Input() allTaskList ?: TaskList;
 
-  archivedTaskList = this.taskFacade.getListOfTasksDone()
+  @Input() archivedTaskList ?: TaskList;
 }

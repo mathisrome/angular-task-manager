@@ -8,6 +8,10 @@ import { TaskComponent } from './tasks/task/task.component';
 import { TaskListComponent } from './tasks/task-list/task-list.component';
 import { ColorByStatusDirective } from './directives/color-by-status.directive';
 import { DateFormatPipe } from './pipes/date-format.pipe';
+import { MainTaskListComponent } from './tasks/main-task-list/main-task-list.component';
+import { AddTaskFormComponent } from './add-task-form/add-task-form/add-task-form.component';
+import { MainAddTaskFormComponent } from './add-task-form/main-add-task-form/main-add-task-form.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -16,12 +20,16 @@ import { DateFormatPipe } from './pipes/date-format.pipe';
     TaskComponent,
     TaskListComponent,
     ColorByStatusDirective,
-    DateFormatPipe
+    DateFormatPipe,
+    MainTaskListComponent,
+    AddTaskFormComponent,
+    MainAddTaskFormComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -3,6 +3,7 @@ import {CRUDTaskListService} from "../crudtask/crudtask-list.service";
 import {TaskStatus} from "../../model/Task";
 import {ByStatusTaskListInterface} from "../../interfaces/by-status-task-list-interface";
 import {TaskList} from "../../model/TaskList";
+import {of} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +11,11 @@ import {TaskList} from "../../model/TaskList";
 export class ByStatutTaskListService extends CRUDTaskListService implements ByStatusTaskListInterface {
 
   private getByStatus(tasksStatus: TaskStatus[]) {
-    const tasks = this.getList().tasks.filter(task => tasksStatus.includes(task.status))
-    return new TaskList(tasks)
+    let takeList = new TaskList(this.taskList.tasks.filter(task => tasksStatus.includes(task.status)))
+    return of(takeList)
   }
 
-  getListOfTasksDone(): TaskList {
+  getListOfTasksDone() {
     return this.getByStatus([TaskStatus.DONE])
   }
 

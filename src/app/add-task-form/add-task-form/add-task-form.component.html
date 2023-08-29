@@ -1,0 +1,22 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="container">
+  <div>
+    <label>Titre</label>
+    <input  type="text" formControlName="title">
+  </div>
+
+  <div>
+    <label>Description</label>
+    <textarea  formControlName="description" cols="30" rows="10"></textarea>
+  </div>
+
+  <div>
+    <label>Statut</label>
+    <select formControlName="status">
+      <option value="TODO">TODO</option>
+      <option value="In progress">In progress</option>
+      <option value="Done">Done</option>
+    </select>
+  </div>
+
+  <button type="submit" [disabled]="!form.valid">add Task</button>
+</form>

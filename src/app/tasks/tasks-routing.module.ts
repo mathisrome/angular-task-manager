@@ -1,9 +1,10 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {TaskListComponent} from "./task-list/task-list.component";
+import {MainTaskListComponent} from "./main-task-list/main-task-list.component";
 
 const routes: Routes = [
-  {path: '', component: TaskListComponent}
+  {path: '', component: MainTaskListComponent}
 ];
 
 @NgModule({

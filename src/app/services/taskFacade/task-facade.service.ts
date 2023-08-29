@@ -13,11 +13,11 @@ export class TaskFacadeService {
   ) {
   }
 
-  getListOfTasksDone(): TaskList {
+  getListOfTasksDone() {
     return this.byStatutService.getListOfTasksDone();
   }
 
-  getListOfTaskNotDone(): TaskList {
+  getListOfTaskNotDone() {
     return this.byStatutService.getListOfTaskNotDone();
   }
 }
