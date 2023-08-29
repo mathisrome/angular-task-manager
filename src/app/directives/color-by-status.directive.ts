@@ -1,5 +1,5 @@
 import {Directive, ElementRef, Input} from '@angular/core';
-import {Task, TaskStatus} from "./model/Task";
+import {Task, TaskStatus} from "../model/Task";
 
 @Directive({
   selector: '[appColorByStatus]'

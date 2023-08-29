@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { TaskComponent } from './tasks/task/task.component';
 import { TaskListComponent } from './tasks/task-list/task-list.component';
-import { ColorByStatusDirective } from './color-by-status.directive';
-import { DateFormatPipe } from './date-format.pipe';
+import { ColorByStatusDirective } from './directives/color-by-status.directive';
+import { DateFormatPipe } from './pipes/date-format.pipe';
 
 @NgModule({
   declarations: [

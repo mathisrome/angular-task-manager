@@ -1,0 +1,17 @@
+:host{
+  display: block;
+  box-shadow: 0 3px 7px rgba(0,0,0,.2);
+  border-radius: 16px;
+
+  h3{
+    border-bottom: 2px solid #eeeeee;
+    padding: 16px;
+  }
+
+  article{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+}
